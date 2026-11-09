@@ -8,6 +8,13 @@ app.get("/", function (req, res) {
   res.send("Hello World!");
 });
 
+app.get("/health", function (req, res) {
+  res.status(200).json({
+    status: "OK",
+    message: "Server is healthy!",
+  });
+});
+
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
 });
