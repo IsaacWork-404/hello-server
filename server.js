@@ -15,6 +15,17 @@ app.get("/health", function (req, res) {
   });
 });
 
+app.use(express.json());
+
+app.post("/message", function (req, res) {
+  const userMessage = req.body.message;
+
+  res.status(200).json({
+    received: true,
+    message: userMessage,
+  });
+});
+
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
 });
