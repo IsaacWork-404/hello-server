@@ -4,22 +4,18 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(express.json());
 
-// GET route
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
 
-// Health check
 app.get("/health", function (req, res) {
   res.json({
     status: "OK",
   });
 });
 
-// ADD YOUR POST ROUTE HERE
 app.post("/message", function (req, res) {
   const userMessage = req.body.message;
 
